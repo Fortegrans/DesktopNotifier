@@ -1,12 +1,13 @@
 import asyncio
-from email import message
-
 from desktop_notifier import DesktopNotifier
 
 
 notifier = DesktopNotifier()
 
 async def main():
-    await notifier.send(title="Merhaba Hüseyin", message="Ben Jarvis")
+    bildirim_basligi= input("bildirim basligi giriniz: ")
+    bildirim_mesaji= input("bildirim mesaji giriniz: ")
+
+    await notifier.send(title=bildirim_basligi, message=bildirim_mesaji)
 
 asyncio.run(main())
